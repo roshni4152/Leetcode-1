@@ -1,0 +1,17 @@
+class Solution {
+public:
+    void rotate(vector<int>& v, int k) {
+	vector<int>temp;
+    k %= v.size();
+	copy(v.begin() + (v.size() - k), v.end(), back_inserter(temp));
+	int val = v.size() - k;
+	int i = 0;
+	while (val--) {
+		temp.push_back(v[i]);
+		i += 1;
+	}
+    v.clear();
+    copy(temp.begin(),temp.end(),back_inserter(v));
+    }
+    
+};
